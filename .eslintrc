@@ -1,0 +1,55 @@
+/*
+ESLint is a tool for identifying and reporting on patterns 
+found in ECMAScript/JavaScript code, with the goal of making 
+code more consistent and avoiding bugs. In many ways, 
+it is similar to JSLint and JSHint with a few exceptions
+*/
+
+// You should then setup a configuration file: ./node_modules/.bin/eslint --init
+//After running eslint --init, you’ll have a .eslintrc file in your directory.
+
+// After that, you can run ESLint in your project’s root directory like this: ./node_modules/.bin/eslint yourfile.js
+
+
+// install the following packages:
+// yarn add --dev eslint prettier eslint-config-airbnb@^15.0.1 eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-import eslint-plugin-jsx-a11y@^5.1.1
+
+
+/*
+eslint-config-airbnb: This package provides Airbnb's .eslintrc as an extensible shared config.
+The default export contains all of our ESLint rules, including ECMAScript 6+ and React. 
+It requires eslint, eslint-plugin-import, eslint-plugin-react, and eslint-plugin-jsx-a11y
+
+eslint-plugin-import : ES6 support + catches misspelled files name, imports etc
+
+eslint-plugin-react: React specific linting rules for ESLint
+
+eslint-plugin-jsx-a11y: Static AST checker for accessibility rules on JSX.
+
+Perttier : Prettier is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
+
+eslint-plugin-prettier : Runs Prettier as an ESLint rule and reports differences as individual ESLint issues.
+
+eslint-congig-prettier : Turns off all rules that are unnecessary or might conflict with Prettier.
+
+*/
+{
+    "extends": ["airbnb", "prettier", "prettier/react"],
+    "plugins": ["prettier"],
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 2016,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "env": {
+      "es6": true,
+      "browser": true,
+      "node": true
+    },
+    "rules": {
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    }
+  }
